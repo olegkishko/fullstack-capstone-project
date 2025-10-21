@@ -51,7 +51,7 @@ export default function Navbar() {
                             <a className="nav-link" href="/home.html">Home</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/app">Gifts</Link>
+                            <a className="nav-link" href="/app">Gifts</a>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/app/search">Search</Link>
