@@ -14,34 +14,37 @@
 .no-image-available-large {
     display: flex;
     align-items: center;
-    justify-content: center;    background-color: #ccc;
+    justify-content: center;
+    background-color: #ccc;
     color: #333;
-    font-size: 18px; /* Task 3: Set font size */
-    /* Additional st/* Style for card header */
+    font-size: 18px;
+}
+
 .card-header {
- Set text color to white */
+    background-color: #007bff;
+    color: #fff;
     text-align: center;
     padding: 15px;
-    /* Additiona}
-
-/* Style for detai    font-size: 28px; /* Task 5: Apply font size */
-    color: #333; /* Task 5: Set text color */
-eeded */
 }
 
-/* Style for com.comments-section {
-    /* Task 6: Style tin for spacing */
-    /* Additional styles as needed */
-
-/* Style for indivi    margin-bottom: 15px; /* Add bottom margin for spacing between cards */
-    /* Additional sty
-
-/* Style for comment author */
-ent author's name bold */
-    /* Additional styles for comment author */
+.details-title {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
 }
 
-/* Style for comment text */
-omment text */
+.comments-section {
+    margin-top: 20px;
+}
+
+.comments-section .card {
+    margin-bottom: 15px;
+}
+
+.comments-section .comment-author {
+    font-weight: bold;
+}
+
+.comments-section .comment-text {
     color: #555;
 }
