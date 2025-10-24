@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useAppContext } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import { urlConfig } from '../../config';
 
 import './LoginPage.css';
 
@@ -22,7 +23,7 @@ function LoginPage() {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        const response = await fetch(`/api/auth/login`, {
+        const response = await fetch(`${urlConfig.backendUrl}/api/auth/login`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -90,7 +91,7 @@ function LoginPage() {
                         <button className="btn btn-primary w-100 mb-3" onClick={handleLogin}>Login</button>
                         
                         <p className="mt-4 text-center">
-                            New here? <a href="/app/register" className="text-primary">Register Here</a>
+                            New here? <Link className="text-primary" to="/app/register">Register Here</Link>
                         </p>
                     </div>
                 </div>

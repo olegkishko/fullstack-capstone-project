@@ -43,6 +43,11 @@ function DetailsPage() {
 		navigate(-1);
 	};
 
+    const formatDate = (timestamp) => {
+        const date = new Date(timestamp * 1000);
+        return date.toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' });
+    };
+
 	//The comments have been hardcoded for this project.
     const comments = [
         {
@@ -90,7 +95,7 @@ function DetailsPage() {
                         </div>
                         <p><strong>Category:</strong> {gift.category}</p>
                         <p><strong>Condition:</strong> {gift.condition}</p>
-                        <p><strong>Date Added:</strong> {gift.dateAdded}</p>
+                        <p><strong>Date Added:</strong> {gift.date_added ? formatDate(gift.date_added) : ''}</p>
                         <p><strong>Age (Years):</strong> {gift.age}</p>
                         <p><strong>Description:</strong> {gift.description}</p>
                     </div>

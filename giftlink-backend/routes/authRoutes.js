@@ -75,7 +75,7 @@ router.post('/login', async (req, res) => {
                 },
             };
             
-            const authtoken = jwt.sign(user._id, JWT_SECRET);
+            const authtoken = jwt.sign(payload, JWT_SECRET);
 
             logger.info('User logged in successfully');
 
