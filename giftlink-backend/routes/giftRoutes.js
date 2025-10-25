@@ -4,13 +4,12 @@ const express = require('express');
 const router = express.Router();
 const connectToDatabase = require("../models/db");
 
+const db = await connectToDatabase();
+const collection = db.collection("gifts");
+
 router.get('/', async (req, res) => {
     try {
-        const db = await connectToDatabase();
-        const collection = db.collection("gifts");
-
         const gifts = await collection.find({}).toArray();
-
         res.json(gifts);
     } catch (e) {
         console.error('Error fetching gifts:', e);
@@ -20,9 +19,6 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const db = await connectToDatabase();
-        const collection = db.collection("gifts");
-
         const id = req.params.id;
         const gift = await collection.findOne({ id });
 
@@ -40,8 +36,6 @@ router.get('/:id', async (req, res) => {
 // Add a new gift
 router.post('/', async (req, res, next) => {
     try {
-        const db = await connectToDatabase();
-        const collection = db.collection("gifts");
         const gift = await collection.insertOne(req.body);
 
         res.status(201).json(gift.ops[0]);
